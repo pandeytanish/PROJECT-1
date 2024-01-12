@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validations</title>
+</head>
+
+<body>
+    <div>
+        <form id="myform">
+
+            <input id="name" placeholder="enter your name">
+            <br><br>
+            <input type="number" id="rollno" placeholder="Enter Your Roll Number">
+            <br><br>
+            <input type="number"  id="number" placeholder="Enter you Mobile number" >
+            <br><br>
+            
+            <div style="color: red;" id="showerror"></div>
+            <br><br>
+            <button type="submit">submit</button>
+
+        </form>
+    </div>
+    <script>
+        document.getElementById("myform").addEventListener("submit", function (e) {
+            e.preventDefault()
+            let name = document.getElementById("name");
+            let rollno = document.getElementById("rollno");
+            let number = document.getElementById("number");
+
+            
+            if (rollno.value == "" ) {
+                document.getElementById("showerror").innerHTML = "Rollno can't be blank"
+
+            } 
+            else if  (rollno.value.length != 7) {
+                document.getElementById("showerror").innerHTML = "Enter 7 digit Roll No"
+
+            }
+            else if  (name.value == "" ) {
+                document.getElementById("showerror").innerHTML = "Name can't be blank"
+
+            }
+            else if  (number.value == "") {
+                document.getElementById("showerror").innerHTML = "Number cannot be blank"
+
+            } 
+            else if  (number.value.length != 10) {
+                document.getElementById("showerror").innerHTML = "Enter Number in 10 digit"
+
+            } 
+            else {
+                document.getElementById("showerror").innerHTML = ""
+            }
+
+
+       
+
+        }
+        )
+    </script>
+</body>
+
+</html>
